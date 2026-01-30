@@ -1,2 +1,3 @@
 import "./styles.css";
-console.log("Hello webpack");
+import { initAddProjectDialog } from "./components/addProjectForm";
+initAddProjectDialog();
