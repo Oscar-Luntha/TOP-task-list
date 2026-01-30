@@ -7,48 +7,28 @@
   </head>
   <body>
     <header class="nav">
-      <div class="nav-logo">⚡ Webpack</div>
+      <div class="nav-logo">Odin Project to-do list</div>
       <nav class="nav-links">
-        <a href="#">Docs</a>
-        <a href="#">GitHub</a>
+        <button id="openAddProject">Add Project</button>
         <a href="#">About</a>
       </nav>
     </header>
-
+    <aside class="project-list">
+      <h1>Project List</h1>
+    </aside>
+    <dialog id="addProjectDialog">
+      <form action="" id="addProjectForm" method="dialog">
+        <h2>Add Project</h2>
+        <label for="">Title <input type="text" name="title" id="title" required></label>
+        <label for="">Category <Select> <option value="work">Work</option> <option value="personal">personal</option></Select></label>
+        <menu>
+          <button type="reset">Cancel</button>
+          <button type="submit">Submit</button>
+        </menu>
+      </form>
+    </dialog>
     <main class="hero">
-      <h1>
-        Build fast.<br />
-        Ship faster.
-      </h1>
-      <p>
-        A minimal Webpack starter template for modern JavaScript projects.
-      </p>
-
-      <div class="hero-actions">
-        <button class="btn primary">Get Started</button>
-        <button class="btn secondary">View GitHub</button>
-      </div>
+      <h1>Project details</h1>
     </main>
-
-    <section class="features">
-      <div class="feature">
-        <h3>⚙️ Modern Tooling</h3>
-        <p>Webpack 5, hot reload, and a clean development experience.</p>
-      </div>
-
-      <div class="feature">
-        <h3> Style Ready</h3>
-        <p>CSS support out of the box with zero configuration.</p>
-      </div>
-
-      <div class="feature">
-        <h3> Extensible</h3>
-        <p>Add Babel, React, or anything else without refactoring.</p>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>Built with using Webpack</p>
-    </footer>
   </body>
 </html>
