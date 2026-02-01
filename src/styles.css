@@ -3,6 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -47,4 +48,36 @@ aside{
 }
 main {
   padding: 1rem;
+}
+#errorContainer{
+  color: red;
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 2px;
+  margin-left: 13vw;
+  height: 20vh;
+  width: 30vw;
+  padding: 5rem;
+  border: #0f172a solid 2px;
+  background-color: #eef2ff;
+  border-radius: 20px;
+}
+.project-list{
+  border: 2px solid black;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+}
+li{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+li > button{
+  padding: 2px;
+  border: 1px solid rgb(236, 25, 25);
+  font-weight: 900;
+  color: white;
 }
