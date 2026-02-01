@@ -8,12 +8,6 @@ function save(projects){
 export function getProjects (){
     return load()
 }
-export function addProject(project){
-    const projects = load()
-    projects.push(project)
-    save(projects)
-}
-export function removeProject(id){
-    const projects = load().filter(p => p.id !== id)
+export function saveall(projects){
     save(projects)
 }
