@@ -13,14 +13,23 @@
         <a href="#">About</a>
       </nav>
     </header>
-    <aside class="project-list">
+    <aside>
       <h1>Project List</h1>
+      <ul class="project-list" id="projectList">
+
+      </ul>
     </aside>
     <dialog id="addProjectDialog">
       <form action="" id="addProjectForm" method="dialog">
         <h2>Add Project</h2>
-        <label for="">Title <input type="text" name="title" id="title" required></label>
-        <label for="">Category <Select> <option value="work">Work</option> <option value="personal">personal</option></Select></label>
+        <label>Title </label>
+        <input type="text" name="title" id="title" required>
+        <label>Category</label>
+        <select name="category" id="category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+        </select>
         <menu>
           <button type="reset">Cancel</button>
           <button type="submit">Submit</button>
@@ -29,6 +38,9 @@
     </dialog>
     <main class="hero">
       <h1>Project details</h1>
+      <div id="errorContainer">
+
+      </div>
     </main>
   </body>
 </html>
