@@ -16,7 +16,7 @@ body {
     #020617 45%
   );
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 3fr 1.5fr;
   grid-template-rows: 10vh 90vh;
   gap: 6px;
 }
@@ -70,8 +70,8 @@ main {
 #errorContainer {
   color: #fee2e2;
   display: none;
-  position: absolute;
-  z-index: 1000;
+  position: fixed;
+  z-index: 9999;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
@@ -112,27 +112,23 @@ li:hover {
   background-color: #0f172a;
 }
 
-li > button {
+button {
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
   border: none;
   font-weight: 700;
   cursor: pointer;
-  background: linear-gradient(
-    135deg,
-    #f97316,
-    #fbbf24
-  );
+  background-color: #ffffff;
   color: #020617;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-li > button:hover {
+button:hover {
   transform: translateY(-1px);
   opacity: 0.9;
 }
 
-li > button:active {
+button:active {
   transform: translateY(0);
 }
 dialog {
@@ -147,10 +143,22 @@ input , option, select{
   font-size: 20px;
   border-radius: 10px;
 }
-option, select, dialog button{
+option, select{
   height: 30px;
   background-color: #0f172a;
   color: rgb(143, 143, 143);
   font-size: 15px;
   border-radius: 10px;
+}
+dialog::backdrop {
+  backdrop-filter: blur(5px); 
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+.delete-btn{
+  background-color: #fb7185;
+  margin-left: 10px;
+}
+.add-task-btn{
+  background:#fabf2b;
+  color: #020617;
 }
