@@ -4,14 +4,21 @@ export function renderProject(project){
     const li = document.createElement("li");
     li.textContent = project.title;
     li.dataset.id = project.id;
-
+    const controlDiv = document.createElement('div');
+    const addTaskBtn = document.createElement('button');
+    addTaskBtn.textContent = "Add Task"
+    addTaskBtn.addEventListener('click', () => {});
+    addTaskBtn.classList.add('add-task-btn');
     const deleteBtn = document.createElement("button")
+    deleteBtn.classList.add('delete-btn');
     deleteBtn.textContent = 'Delete'
     deleteBtn.addEventListener('click', () => {
         deleteProject(project.id);
         li.remove()
     })
-    li.appendChild(deleteBtn)
+    controlDiv.classList.add('project-controls');
+    controlDiv.append(addTaskBtn, deleteBtn);
+    li.append(controlDiv)
     projectList.appendChild(li)
 }
 export function renderProjects(projects){
