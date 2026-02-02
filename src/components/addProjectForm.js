@@ -17,6 +17,7 @@ export function initAddProjectDialog(){
             form.reset()
             dialog.close();
         }catch(err){
+            dialog.close();
             showError(err.message)
         }
     })
