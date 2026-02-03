@@ -162,3 +162,8 @@ dialog::backdrop {
   background:#fabf2b;
   color: #020617;
 }
+.project-Title{
+  cursor: pointer;
+  color: #ffffff;
+  font-size: large;
+}
