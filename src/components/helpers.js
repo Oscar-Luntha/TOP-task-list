@@ -1,13 +1,19 @@
-import { deleteProject } from "../services/projectServices";
+import { deleteProject, getProject } from "../services/projectServices";
 export function renderProject(project){
     const projectList = document.getElementById('projectList');
     const li = document.createElement("li");
-    li.textContent = project.title;
-    li.dataset.id = project.id;
+    const projectTitle = document.createElement("h4")
+    projectTitle.textContent = project.title
+    projectTitle.classList.add("project-Title")
+    projectTitle.dataset.id = project.id;
+    projectTitle.addEventListener('click', () => {
+        const selectedProject = getProject(project.id)
+        console.log(selectedProject)
+    })
+    li.appendChild(projectTitle)
     const controlDiv = document.createElement('div');
     const addTaskBtn = document.createElement('button');
     addTaskBtn.textContent = "Add Task"
-    addTaskBtn.addEventListener('click', () => {});
     addTaskBtn.classList.add('add-task-btn');
     const deleteBtn = document.createElement("button")
     deleteBtn.classList.add('delete-btn');
@@ -34,4 +40,8 @@ export function showError(message){
     setTimeout( () => {
         errorContainer.style.display = 'none'
     }, 3000)
+}
+export function showProjectDetails(projectId){
+    const project = getProject(projectId)
+    console.log(project)
 }
