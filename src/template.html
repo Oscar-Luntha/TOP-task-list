@@ -36,7 +36,25 @@
         </menu>
       </form>
     </dialog>
-    <main class="hero">
+    <dialog id="addTaskDialog">
+      <form action="" id="addTaskForm" method="dialog">
+        <h2>Add Task</h2>
+        <label>Title </label>
+        <input type="text" name="taskName" id="taskName" required>
+        <label>Priority</label>
+        <select name="priority" id="priority" required>
+            <option value="" disabled selected>Select priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <menu>
+          <button type="reset">Cancel</button>
+          <button type="submit">Submit</button>
+        </menu>
+      </form>
+    </dialog> 
+    <main class="hero" id="projectDetails">
       <h1>Project details</h1>
       <div id="errorContainer">
 
