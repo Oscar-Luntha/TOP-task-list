@@ -2,7 +2,7 @@ import { Task } from "./task";
 
 export default class Project{
     constructor({id, title, category ,tasks = []}){
-        this.id = crypto.randomUUID;
+        this.id = id ?? crypto.randomUUID();
         this.title = title;
         this.category = category;
         this.tasks = tasks.map(task => new Task(task))
