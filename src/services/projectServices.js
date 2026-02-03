@@ -6,7 +6,11 @@ import { initialProjects } from "../data/initialProjects";
 export function initProjects(){
     store.projects = initialProjects.map(project => new Project(project))
 }
-
+export function getProject(projectId){
+    const projects = getProjects()
+    const project = projects.find(p => p.id == projectId)
+    return project
+}
 export function getProjects(){
     return storage.getProjects()
 }
