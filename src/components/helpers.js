@@ -1,4 +1,5 @@
 import { deleteProject, getProject } from "../services/projectServices";
+import { projectDetails } from "./projectDetails";
 export function renderProject(project){
     const projectList = document.getElementById('projectList');
     const li = document.createElement("li");
@@ -8,13 +9,10 @@ export function renderProject(project){
     projectTitle.dataset.id = project.id;
     projectTitle.addEventListener('click', () => {
         const selectedProject = getProject(project.id)
-        console.log(selectedProject)
+        projectDetails(selectedProject)
     })
     li.appendChild(projectTitle)
-    const controlDiv = document.createElement('div');
-    const addTaskBtn = document.createElement('button');
-    addTaskBtn.textContent = "Add Task"
-    addTaskBtn.classList.add('add-task-btn');
+    const controlDiv = document.createElement('div');;
     const deleteBtn = document.createElement("button")
     deleteBtn.classList.add('delete-btn');
     deleteBtn.textContent = 'Delete'
@@ -23,7 +21,7 @@ export function renderProject(project){
         li.remove()
     })
     controlDiv.classList.add('project-controls');
-    controlDiv.append(addTaskBtn, deleteBtn);
+    controlDiv.append(deleteBtn);
     li.append(controlDiv)
     projectList.appendChild(li)
 }
@@ -40,8 +38,4 @@ export function showError(message){
     setTimeout( () => {
         errorContainer.style.display = 'none'
     }, 3000)
-}
-export function showProjectDetails(projectId){
-    const project = getProject(projectId)
-    console.log(project)
 }
