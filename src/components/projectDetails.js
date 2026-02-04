@@ -1,4 +1,5 @@
 import { store } from "../state/store";
+import { updateProject } from "../services/projectServices";
 
 export function projectDetails(project){
     const container = document.getElementById("projectDetails")
@@ -60,6 +61,7 @@ export function projectDetails(project){
         const taskIndex = tasks.findIndex((task) => task.id === taskId)
         if (taskIndex === -1) return
         tasks[taskIndex].completed = toggle.checked
+        updateProject(store.activeProject)
         projectDetails(store.activeProject)
     })
 
@@ -71,6 +73,7 @@ export function projectDetails(project){
         const taskIndex = tasks.findIndex((task) => task.id === taskId)
         if (taskIndex === -1) return
         tasks.splice(taskIndex, 1)
+        updateProject(store.activeProject)
         projectDetails(store.activeProject)
     })
 

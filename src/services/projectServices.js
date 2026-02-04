@@ -39,6 +39,14 @@ export function deleteProject(id){
     storage.saveall(projects.filter(p => p.id !== id))
 }
 
+export function updateProject(project){
+    const projects = storage.getProjects();
+    const index = projects.findIndex(p => p.id === project.id)
+    if (index === -1) return
+    projects[index] = project
+    storage.saveall(projects)
+}
+
 export function createProject(title) {
 
   store.projects.push(

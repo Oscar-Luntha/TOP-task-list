@@ -1,6 +1,7 @@
 import { store } from "../state/store";
 import { projectDetails } from "./projectDetails";
 import { showError } from "./helpers";
+import { updateProject } from "../services/projectServices";
 
 export function initAddTaskDialog(){
     const dialog = document.getElementById("addTaskDialog")
@@ -31,6 +32,7 @@ export function initAddTaskDialog(){
             : []
         tasks.push(newTask)
         store.activeProject.tasks = tasks
+        updateProject(store.activeProject)
         projectDetails(store.activeProject)
         form.reset()
         dialog.close()
