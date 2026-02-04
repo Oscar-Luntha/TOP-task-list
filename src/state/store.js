@@ -1,4 +1,5 @@
 export const store = {
   projects: [],
-  activeUserId: "default"
+  activeUserId: "default",
+  activeProject: null
 };
